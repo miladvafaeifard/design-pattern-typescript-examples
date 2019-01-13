@@ -1,0 +1,27 @@
+{
+  "name": "design-pattern-typescript-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "nodemon -q"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miladvafaeifard/design-pattern-typescript-examples.git"
+  },
+  "keywords": [],
+  "author": "Milad Vafaeifard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miladvafaeifard/design-pattern-typescript-examples/issues"
+  },
+  "homepage": "https://github.com/miladvafaeifard/design-pattern-typescript-examples#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  }
+}
