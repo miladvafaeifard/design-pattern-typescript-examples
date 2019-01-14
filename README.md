@@ -10,6 +10,8 @@ Here are the implementations of the following design patterns in TypeScript:
 
 ## Behavioral Patterns ##
 
+* [Iterator](https://github.com/miladvafaeifard/design-pattern-typescript-examples/tree/master/Iterator)
+
 ### Compile the project ###
 
 ```shell
