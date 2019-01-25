@@ -11,6 +11,7 @@ Here are the implementations of the following design patterns in TypeScript:
 ## Behavioral Patterns ##
 
 * [Iterator](https://github.com/miladvafaeifard/design-pattern-typescript-examples/tree/master/Iterator)
+* [Chain of responsibility](https://github.com/miladvafaeifard/design-pattern-typescript-examples/tree/master/Chain-of-responsibility)
 
 ### Compile the project ###
 
