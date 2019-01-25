@@ -1,14 +1,15 @@
-import { ReceiptPaperHandler, WithdrawalHandler, ChargeMobileHandler } from './Handler';
+import { ReceiptPaperHandler, WithdrawalHandler, ChargeMobileHandler, handlers, BaseHandler } from './Handler';
 import { CustomerRequest } from './model/customer';
 
 export class AtmMachine {
-  private receiptPaperHandler: ReceiptPaperHandler = new ReceiptPaperHandler();
-  private withdrawalHandler: WithdrawalHandler = new WithdrawalHandler();
-  private chargeMobileHandler: ChargeMobileHandler = new ChargeMobileHandler();
-
+  private handlers: any = [];
   constructor(nameBank: string) {
-    this.receiptPaperHandler.setNext(this.withdrawalHandler);
-    this.withdrawalHandler.setNext(this.chargeMobileHandler);
+    this.handlers = handlers;
+    this.handlers.forEach((handler: BaseHandler, idx: number) => {
+      if(handlers[idx]){
+        handler.setNext(handlers[idx + 1]);
+      }
+    });
   }
 
   public insertCard() {
@@ -16,6 +17,6 @@ export class AtmMachine {
   }
 
   public request(req: CustomerRequest) {
-    this.receiptPaperHandler.handle(req);
+    this.handlers[0].handle(req);
   }
 }

@@ -20,6 +20,7 @@ export abstract class BaseHandler {
   }
 
   public operation(request: CustomerRequest): void {
+    // TODO : it is possible to be applied Iterator pattern
     if (this.hasNext()) {
       this.handler.handle(request);
     } else {
@@ -62,3 +63,10 @@ export class ChargeMobileHandler extends BaseHandler {
     }
   }
 }
+
+// TODO : need to consider which pattern can be applied for this maybe: Mediator, Command or Observer
+// the best solution is to apply a composite pattern
+export const handlers = [
+    new ReceiptPaperHandler(),
+    new ChargeMobileHandler()
+];
