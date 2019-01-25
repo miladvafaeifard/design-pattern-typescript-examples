@@ -3,10 +3,10 @@ import { CustomerRequest } from './model/customer';
 
 const atmMachine: AtmMachine = new AtmMachine('Dog Bank');
 
-const clientRequest = {
+const clientRequest: CustomerRequest = {
   name: 'John Smith',
   request: {
-    type: 'WITHDRAWAL'
+    type: 'CHARGE_MOBILE'
   }
 };
 

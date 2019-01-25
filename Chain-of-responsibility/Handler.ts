@@ -6,7 +6,7 @@ export interface Handler {
   operation: (request: CustomerRequest) => void;
 }
 
-export type operatorType = 'RECEIPT_PAPER' | 'WITHDRAWAL' | 'others';
+export type operatorType = 'RECEIPT_PAPER' | 'WITHDRAWAL' | 'CHARGE_MOBILE';
 
 export abstract class BaseHandler {
   private handler: BaseHandler = null;
@@ -45,6 +45,17 @@ export class WithdrawalHandler extends BaseHandler {
   public handle(request: CustomerRequest): void {
     if (request.request.type === 'WITHDRAWAL') {
       console.log('handling withdrawal');
+    } else {
+      console.log('forwarding to next handler');
+      super.operation(request);
+    }
+  }
+}
+
+export class ChargeMobileHandler extends BaseHandler {
+  public handle(request: CustomerRequest): void {
+    if (request.request.type === 'CHARGE_MOBILE') {
+      console.log('handling charge mobile');
     } else {
       console.log('forwarding to next handler');
       super.operation(request);
